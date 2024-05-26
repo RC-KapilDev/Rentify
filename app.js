@@ -16,7 +16,8 @@ const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 3000;
 const app = express();
-const DB = "mongodb://localhost/te";
+const DB =
+  "mongodb+srv://rckapildev8:test1234@cluster0.0dppe1f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const imageSchema = new mongoose.Schema({
   url: {
