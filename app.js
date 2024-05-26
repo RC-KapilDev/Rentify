@@ -15,8 +15,7 @@ const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 3000;
 const app = express();
-const DB =
-  "mongodb+srv://rckapildev8:test1234@cluster0.0dppe1f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const DB = "mongodb://localhost/te";
 
 const imageSchema = new mongoose.Schema({
   url: {
@@ -69,9 +68,6 @@ app.post("/upload", upload.single("image"), async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("App is running");
-});
 // Use routers
 app.use("/Rentify", propertyRouter);
 app.use("/Rentify", sellerRouter);
@@ -82,4 +78,4 @@ app.listen(PORT, "0.0.0.0", () => {
   console.log(`Listening at Port ${PORT}`);
 });
 
-export default server;
+// app.js
