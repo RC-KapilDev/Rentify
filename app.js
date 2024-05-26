@@ -9,7 +9,6 @@ import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
 import { formatResponse } from "./utils/response.js";
-import ServerlessHttp from "serverless-http";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -78,14 +77,9 @@ app.use("/Rentify", propertyRouter);
 app.use("/Rentify", sellerRouter);
 app.use("/Rentify", buyerRouter);
 app.use("/Rentify", authRouter);
-app.use("/.netlify/functions/api", propertyRouter);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Listening at Port ${PORT}`);
 });
-
-// app.js
-
-const server = ServerlessHttp(app);
 
 export default server;
